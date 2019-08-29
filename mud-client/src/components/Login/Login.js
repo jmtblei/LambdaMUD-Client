@@ -19,7 +19,7 @@ class Login extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        let URL = `https://lambda-mud-cs.herokuapp.com/api/login/`
+        const URL = `https://lambda-mud-cs.herokuapp.com/api/login/`
         axios
         .post(URL, {
             username: this.state.username,
