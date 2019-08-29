@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import axios from 'axios';
 
 class Game extends React.component {
     constructor() {
@@ -14,14 +15,50 @@ class Game extends React.component {
             }
         };
     }
+
+    componentDidMount() {
+        this.gameInitialize();
+    }
     
-    logout = event => {
-        localStorage.clear();
-    };
+
+    gameInitialize = () => {
+        const URL = 
+        `https://lambda-mud-cs.herokuapp.com/api/adv/init`;
+        const token = 
+        "Token " + localStorage.getItem("authToken"); 
+        const headers = {headers: {"content-type": "application/JSON", Authorization: token}};
+        axios
+            .get(URL, headers)
+            .then(res => {
+                this.setState({
+                    uuid: res.data.uuid,
+                    name: res.data.name,
+                    title: res.data.title,
+                    description: res.data.description,
+                    players: res.data.players
+                })
+                console.log('initdata', res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    handleMove = (direction) => {
+        const header = {
+            Authorization: `Token ${this.state.key}`
+        };
+        axios
+            .post("https://lambda-mud-cs.herokuapp.com/api/adv/move/", {direction: direction},
+            {headers: header})
+            .then(res => {
+                console.lof("Move", res.data.title)
+            })
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <>
+                <Nav />
                 <div className="game">
                     <h1>GAME LAND</h1>
                     <p>Player: {this.state.player.name}</p>
@@ -29,7 +66,7 @@ class Game extends React.component {
                     <p>Description: {this.state.player.description}</p>
                     <input type="text" placeholder="Enter Command Here" />
                     <div>
-                        <h2>Players in Room</h2>
+                        <h3>Players in Room</h3>
                         <div>{this.state.player.players.length !== 0 ? 
                             <h3>{this.state.player.players.map(player => {
                                 return (
@@ -39,14 +76,10 @@ class Game extends React.component {
                                 <h3>No players in the Room</h3>
                             )}
                         </div>
-                        <button>West</button>
-                        <div><button>North</button><button>South</button></div>
+                        <button onClick={() => this.handleMove}>West</button>
+                        <div><button onClick={() => this.handleMove}>North</button><button onClick={() => this.handleMove}>South</button></div>
+                        <button onClick={() => this.handleMove}>East</button>
                     </div>
-                </div>
-                <div>
-                    <Link to="/">
-                        <button onClick={logout}>Log Out</button>
-                    </Link>
                 </div>
            </>
        )

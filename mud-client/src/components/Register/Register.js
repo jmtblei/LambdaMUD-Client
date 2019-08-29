@@ -56,9 +56,6 @@ class Register extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>
-					<Link to="/">Home</Link>
-				</div>
 				<h2>Register a new account</h2>
 				<form onSubmit={this.handleSubmit}>
 					<input
@@ -85,7 +82,7 @@ class Register extends React.Component {
 					<button onClick={this.handleSubmit}>Submit</button>
 				</form>
 				<div>
-					Already have an account?
+					<p>Already have an account?</p>
 					<Link to="/login">Log in</Link>
 				</div>
 			</div>
