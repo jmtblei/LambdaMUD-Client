@@ -12,9 +12,6 @@ class Home extends React.Component {
 				<Link to="/register">
 					<button>Register</button>
 				</Link>
-				<Link to="/game">
-					<button>Play</button>
-				</Link>
 			</div>
 		);
 	}

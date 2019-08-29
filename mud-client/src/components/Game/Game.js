@@ -1,42 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import axios from 'axios';
 
-class Game extends React.component {
+class Game extends React.Component {
     constructor() {
         super(); 
         this.state = {
-            player: {
                 name: '',
                 title: '',
                 description: '',
-                uuid: ''
-            }
+                uuid: '',
+                players: [],
         };
     }
+
+    componentDidMount() {
+        this.gameInitialize();
+    }
     
-    logout = event => {
-        localStorage.clear();
-    };
+
+    gameInitialize = () => {
+        const URL = 
+        `https://lambda-mud-cs.herokuapp.com/api/adv/init`;
+        const token = 
+        "Token " + localStorage.getItem("authToken"); 
+        const headers = {headers: {"content-type": "application/JSON", Authorization: token}};
+        axios
+            .get(URL, headers)
+            .then(res => {
+                this.setState({
+                    uuid: res.data.uuid,
+                    name: res.data.name,
+                    title: res.data.title,
+                    description: res.data.description,
+                    players: res.data.players
+                })
+                console.log('initdata', res.data)
+            })
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <>
+            <Nav />
             <div className="game">GAME LAND</div>
-                <div>{this.state.player.name}</div>
-                <div>{this.state.player.title}</div>
-                <div>{this.state.player.description}</div>
+                <div>Hello {this.state.name}</div>
+                <div>You are currently at {this.state.title}</div>
+                <div>{this.state.description}</div>
                 <input type="text" placeholder="Enter Command Here" />
             <div>
                 <h1>Game On</h1>
-                <button>West</button>
-               <div><button>North</button><button>South</button></div>
-            </div>
-            <div>
-                <div>    
-                    <Link to="/">
-                        <button onClick={logout}>Log Out</button>
-                    </Link>
-                </div>
+                <button>North</button>
+               <div><button>West</button><button>East</button></div>
+               <button>South</button>
             </div>
            </>
        )
