@@ -101,3 +101,7 @@
   width: 60px;
   cursor: pointer;
 }
+
+.buttons button:focus {
+  outline: none;
+}
