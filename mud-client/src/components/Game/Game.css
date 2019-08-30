@@ -1,0 +1,107 @@
+.app {
+  height: 100vh;
+  background: url("../../images/wood.jpeg");
+  background-size: cover;
+}
+.outside {
+  border: 3px solid black;
+  width: 120px;
+  height: 100px;
+  background: lightgray;
+}
+.outside2 {
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  width: 120px;
+  height: 100px;
+  background: lightgray;
+}
+
+.hall {
+  height: 30px;
+  width: 50px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin-top: 150px;
+  background: lightgray;
+}
+
+.container {
+  display: flex;
+  width: 294px;
+  margin: 0 auto;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 200px;
+}
+
+.game {
+  color: red;
+}
+
+.dashboard {
+  font-family: "Ubuntu", "Lato", sans-serif;
+  margin-top: 50px;
+  font-weight: 400;
+  width: 45%;
+  height: 220px;
+  position: relative;
+  padding: 10px;
+  background: #111;
+  border-radius: 0.4em;
+  border: 1px solid #191919;
+  box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.08),
+    0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.name {
+  color: white;
+  font-size: 25px;
+}
+
+.room {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.desc {
+  text-align: left;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.players {
+  text-align: left;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.lowerDash {
+  display: flex;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+
+.buttons button {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 25px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.buttons button:focus {
+  outline: none;
+}

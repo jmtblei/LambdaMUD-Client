@@ -1,7 +1,9 @@
 # LambdaMUD-Client
+
 Front-end for the [LambdaMUD-Project](https://github.com/LambdaSchool/LambdaMUD-Project).
 
 ## Trello Set Up:
+
 [Trello Link](https://trello.com/b/oRQlvX7J/lambdamud-bdj)
 
 - [x] Create a Trello account if you don't have one already
@@ -15,6 +17,7 @@ Front-end for the [LambdaMUD-Project](https://github.com/LambdaSchool/LambdaMUD-
 ## MVP Features:
 
 #### Client
+
 - [x] Create a standalone frontend app that communicates with the server via API calls
 - [x] Be able to create a new account on the server (implemented on server)
 - [x] Be able to log in to the server (implemented on server)
@@ -27,9 +30,11 @@ Front-end for the [LambdaMUD-Project](https://github.com/LambdaSchool/LambdaMUD-
 - [ ] Alert the player when someone in the current room says something (server implementation incomplete)
 
 #### Server
+
 - [ ] Create a new API endpoint for `say` which broadcasts a message to other players in the current room
 - [ ] Deploy to Heroku
 
 #### General
+
 - [ ] Header comments in all source files that describe overall what the file does
 - [ ] Header comments on all functions that describe what the function does, function arguments, and return values
