@@ -11,7 +11,8 @@ class Game extends React.Component {
       title: "",
       description: "",
       uuid: "",
-      players: []
+      players: [],
+      error_msg: ""
     };
   }
 
@@ -40,30 +41,119 @@ class Game extends React.Component {
       .catch(err => console.log(err));
   };
 
+  playerMoveN = () => {
+    const URL = `https://lambda-mud-cs.herokuapp.com/api/adv/move`;
+    const token = "Token " + localStorage.getItem("authToken");
+    const headers = {
+      headers: { "content-type": "application/JSON", Authorization: token }
+    };
+    const body = {"direction":"n"}
+    axios
+        .post(URL, body, headers)
+        .then(res => {
+            this.setState({
+              name: res.data.name,
+              title: res.data.title,
+              description: res.data.description,
+              players: res.data.players,
+              error_msg: res.data.error_msg
+            });
+            console.log("movedata", res.data);
+          })
+          .catch(err => console.log(err));
+  }
+
+  playerMoveW = () => {
+    const URL = `https://lambda-mud-cs.herokuapp.com/api/adv/move`;
+    const token = "Token " + localStorage.getItem("authToken");
+    const headers = {
+      headers: { "content-type": "application/JSON", Authorization: token }
+    };
+    const body = {"direction":"w"}
+    axios
+        .post(URL, body, headers)
+        .then(res => {
+            this.setState({
+              name: res.data.name,
+              title: res.data.title,
+              description: res.data.description,
+              players: res.data.players,
+              error_msg: res.data.error_msg
+            });
+            console.log("movedata", res.data);
+          })
+          .catch(err => console.log(err));
+  }
+
+  playerMoveE = () => {
+    const URL = `https://lambda-mud-cs.herokuapp.com/api/adv/move`;
+    const token = "Token " + localStorage.getItem("authToken");
+    const headers = {
+      headers: { "content-type": "application/JSON", Authorization: token }
+    };
+    const body = {"direction":"e"}
+    axios
+        .post(URL, body, headers)
+        .then(res => {
+            this.setState({
+              name: res.data.name,
+              title: res.data.title,
+              description: res.data.description,
+              players: res.data.players,
+              error_msg: res.data.error_msg
+            });
+            console.log("movedata", res.data);
+          })
+          .catch(err => console.log(err));
+  }
+  
+  playerMoveS = () => {
+    const URL = `https://lambda-mud-cs.herokuapp.com/api/adv/move`;
+    const token = "Token " + localStorage.getItem("authToken");
+    const headers = {
+      headers: { "content-type": "application/JSON", Authorization: token }
+    };
+    const body = {"direction":"s"}
+    axios
+        .post(URL, body, headers)
+        .then(res => {
+            this.setState({
+              name: res.data.name,
+              title: res.data.title,
+              description: res.data.description,
+              players: res.data.players,
+              error_msg: res.data.error_msg
+            });
+            console.log("movedata", res.data);
+          })
+          .catch(err => console.log(err));
+  }
+
   render() {
     let player;
     if (this.state.players.length === 0) {
-      player = <div className='players'>Players: None</div>;
+      player = <div className='players'>Other Players in room: None</div>;
     } else {
-      player = <div className='players'>Players: {this.state.players}</div>;
+      player = <div className='players'>Other Players in room: {this.state.players}</div>;
     }
     return (
       <div className='app'>
         <Nav />
         <div className='gameContainer'>
           <div className='dashboard'>
-            <div className='name'>{this.state.name}</div>
-            <div className='room'>Room: {this.state.title}</div>
+            <div className='name'>Hello, {this.state.name}</div>
+            <div className='room'>You are in room: {this.state.title}</div>
             <div className='desc'>{this.state.description}</div>
+            <div className='desc'>{this.state.error_msg}</div>
             <div className='lowerDash'>
               {player}
               <div className='buttons'>
-                <button>North</button>
+                <button onClick={this.playerMoveN}>North</button>
                 <div>
-                  <button>West</button>
-                  <button>East</button>
+                  <button onClick={this.playerMoveW}>West</button>
+                  <button onClick={this.playerMoveE}>East</button>
                 </div>
-                <button>South</button>
+                <button onClick={this.playerMoveS}>South</button>
               </div>
             </div>
           </div>
@@ -71,14 +161,14 @@ class Game extends React.Component {
           <div>
             <div className='container'>
               <div className='leftHouse'>
-                <div class='outside2'>Overlook</div>
-                <div class='outside2'>Foyer</div>
-                <div class='outside'>Outside</div>
+                <div className='outside2'>Overlook</div>
+                <div className='outside2'>Foyer</div>
+                <div className='outside'>Outside</div>
               </div>
               <div className='hall'></div>
-              <div class='rightHouse'>
-                <div class='outside2'>Treasure</div>
-                <div class='outside'>Narrow</div>
+              <div className='rightHouse'>
+                <div className='outside2'>Treasure</div>
+                <div className='outside'>Narrow</div>
               </div>
             </div>
           </div>
