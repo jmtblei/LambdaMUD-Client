@@ -1,22 +1,30 @@
+.app {
+  height: 100vh;
+  background: url("../../images/wood.jpeg");
+  background-size: cover;
+}
 .outside {
-  border: 1px solid black;
+  border: 3px solid black;
   width: 120px;
   height: 100px;
+  background: lightgray;
 }
 .outside2 {
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
   width: 120px;
   height: 100px;
+  background: lightgray;
 }
 
 .hall {
   height: 30px;
   width: 50px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
   margin-top: 150px;
+  background: lightgray;
 }
 
 .container {
@@ -91,4 +99,5 @@
   border-radius: 10px;
   height: 25px;
   width: 60px;
+  cursor: pointer;
 }

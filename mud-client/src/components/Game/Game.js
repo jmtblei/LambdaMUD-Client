@@ -48,9 +48,8 @@ class Game extends React.Component {
       player = <div className='players'>Players: {this.state.players}</div>;
     }
     return (
-      <>
+      <div className='app'>
         <Nav />
-        <div className='game'>GAME LAND</div>
         <div className='gameContainer'>
           <div className='dashboard'>
             <div className='name'>{this.state.name}</div>
@@ -84,7 +83,7 @@ class Game extends React.Component {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

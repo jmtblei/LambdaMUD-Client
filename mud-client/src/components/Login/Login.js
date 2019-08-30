@@ -49,7 +49,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
+        <div className='spacer'>Game Land</div>
         <form className='form' onSubmit={this.handleSubmit}>
           <p className='clearfix'>
             <label for='login'>Username</label>

@@ -1,10 +1,22 @@
+.app {
+  height: 100vh;
+  background: url("../../images/wood.jpeg");
+  background-size: cover;
+}
+
+.spacer {
+  font-family: "Faster One", cursive;
+  font-size: 40px;
+  text-align: left;
+  margin-bottom: 200px;
+  margin-left: 20px;
+}
 .form {
   font-family: "Ubuntu", "Lato", sans-serif;
   font-weight: 400;
   /* Size and position */
   width: 300px;
-  position: relative;
-  margin: 60px auto 30px;
+  margin: 0 auto 30px;
   padding: 10px;
   overflow: hidden;
 
@@ -132,7 +144,7 @@
   content: "";
   height: 1px;
   width: 33%;
-  position: absolute;
+
   left: 20%;
   top: 0;
 
