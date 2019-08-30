@@ -19,6 +19,7 @@
   margin: 0 auto 30px;
   padding: 10px;
   overflow: hidden;
+  position: relative;
 
   /* Styles */
   background: #111;
