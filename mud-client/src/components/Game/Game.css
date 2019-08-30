@@ -1,0 +1,30 @@
+.outside {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+.outside2 {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+.hall {
+  height: 30px;
+  width: 50px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 150px;
+}
+
+.container {
+  display: flex;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.game {
+  color: red;
+}
