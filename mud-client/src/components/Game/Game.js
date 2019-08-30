@@ -41,34 +41,48 @@ class Game extends React.Component {
   };
 
   render() {
+    let player;
+    if (this.state.players.length === 0) {
+      player = <div className='players'>Players: None</div>;
+    } else {
+      player = <div className='players'>Players: {this.state.players}</div>;
+    }
     return (
       <>
         <Nav />
         <div className='game'>GAME LAND</div>
-        <div>Hello {this.state.name}</div>
-        <div>You are currently at {this.state.title}</div>
-        <div>{this.state.description}</div>
-        <input type='text' placeholder='Enter Command Here' />
-        <div>
-          <h1>Game On</h1>
-          <div className='container'>
-            <div className='leftHouse'>
-              <div class='outside2'>Overlook</div>
-              <div class='outside2'>Foyer</div>
-              <div class='outside'>Outside</div>
-            </div>
-            <div className='hall'></div>
-            <div class='rightHouse'>
-              <div class='outside2'>Treasure</div>
-              <div class='outside'>Narrow</div>
+        <div className='gameContainer'>
+          <div className='dashboard'>
+            <div className='name'>{this.state.name}</div>
+            <div className='room'>Room: {this.state.title}</div>
+            <div className='desc'>{this.state.description}</div>
+            <div className='lowerDash'>
+              {player}
+              <div className='buttons'>
+                <button>North</button>
+                <div>
+                  <button>West</button>
+                  <button>East</button>
+                </div>
+                <button>South</button>
+              </div>
             </div>
           </div>
-          <button>North</button>
+
           <div>
-            <button>West</button>
-            <button>East</button>
+            <div className='container'>
+              <div className='leftHouse'>
+                <div class='outside2'>Overlook</div>
+                <div class='outside2'>Foyer</div>
+                <div class='outside'>Outside</div>
+              </div>
+              <div className='hall'></div>
+              <div class='rightHouse'>
+                <div class='outside2'>Treasure</div>
+                <div class='outside'>Narrow</div>
+              </div>
+            </div>
           </div>
-          <button>South</button>
         </div>
       </>
     );
