@@ -1,4 +1,4 @@
-.form {
+.form2 {
   font-family: "Ubuntu", "Lato", sans-serif;
   font-weight: 400;
   /* Size and position */
@@ -16,7 +16,7 @@
     0 16px 10px -8px rgba(0, 0, 0, 0.6);
 }
 
-.form label {
+.form2 label {
   /* Size and position */
   width: 50%;
   float: left;
@@ -33,8 +33,8 @@
   cursor: pointer;
 }
 
-.form input[type="text"],
-.form input[type="password"] {
+.form2 input[type="text"],
+.form2 input[type="password"] {
   /* Size and position */
   width: 50%;
   float: left;
@@ -53,28 +53,27 @@
   color: #fff;
 }
 
-.form input[type="text"]:hover,
-.form input[type="password"]:hover,
-.form label:hover ~ input[type="text"],
-.form label:hover ~ input[type="password"] {
+.form2 input[type="text"]:hover,
+.form2 input[type="password"]:hover,
+.form2 label:hover ~ input[type="text"],
+.form2 label:hover ~ input[type="password"] {
   background: #27292c;
 }
 
-.form input[type="text"]:focus,
-.form input[type="password"]:focus {
+.form2 input[type="text"]:focus,
+.form2 input[type="password"]:focus {
   box-shadow: inset 0 0 2px #000;
   background: #494d54;
   border-color: #51cbee;
   outline: none; /* Remove Chrome outline */
 }
 
-.form p:nth-child(3),
-.form p:nth-child(4) {
+.form2 p:nth-child(4) {
   float: left;
   width: 50%;
 }
 
-.form label[for="remember"] {
+.form2 label[for="remember"] {
   width: auto;
   float: none;
   display: inline-block;
@@ -85,12 +84,12 @@
   text-indent: 2px;
 }
 
-.form input[type="checkbox"] {
+.form2 input[type="checkbox"] {
   margin-left: 10px;
   vertical-align: middle;
 }
 
-.form input[type="submit"] {
+.form2 input[type="submit"] {
   /* Width and position */
   width: 100%;
   padding: 8px 5px;
@@ -112,22 +111,22 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
 }
 
-.form input[type="submit"]:hover {
+.form2 input[type="submit"]:hover {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.form input[type="submit"]:active {
+.form2 input[type="submit"]:active {
   background: #287db5;
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.6);
   border-color: #000; /* Fallback */
   border-color: rgba(0, 0, 0, 0.9);
 }
 
-.no-boxshadow .form input[type="submit"]:hover {
+.no-boxshadow .form2 input[type="submit"]:hover {
   background: #2a92d8;
 }
 
-.form:after {
+.form2:after {
   /* Size and position */
   content: "";
   height: 1px;
@@ -148,7 +147,7 @@
 }
 
 /* Small flash */
-.form:before {
+.form2:before {
   /* Size and position */
   content: "";
   width: 8px;
@@ -162,7 +161,7 @@
   box-shadow: 0 0 6px 4px #fff;
 }
 
-.form p:nth-child(1):before {
+.form2 p:nth-child(1):before {
   /* Size and position */
   content: "";
   width: 250px;
@@ -181,7 +180,7 @@
   pointer-events: none;
 }
 
-.no-pointerevents .form p:nth-child(1):before {
+.no-pointerevents .form2 p:nth-child(1):before {
   display: none;
 }
 
